@@ -277,7 +277,8 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
 
     /**
      * Creates a new <tt>ReentrantReadWriteLock</tt> with
-     * the given fairness policy
+     * the given fairness policy.
+     *
      * @param fair true if this lock should use a fair ordering policy
      */
     public ReentrantReadWriteLock(boolean fair) {
