@@ -159,7 +159,8 @@ public class Semaphore {
     public void acquireUninterruptibly() {}
 
     /**
-     * Acquires a permit only if one is available at the time of invocation.
+     * Acquires a permit from this semaphore, only if one is available at the 
+     * time of invocation.
      * <p>Acquires a permit, if one is available and returns immediately,
      * with the value <tt>true</tt>,
      * reducing the number of available permits by one.
@@ -175,8 +176,8 @@ public class Semaphore {
     }
 
     /**
-     * Acquires a permit if one becomes available  within the given waiting
-     * time and the
+     * Acquires a permit from this semaphore, if one becomes available 
+     * within the given waiting time and the
      * current thread has not been {@link Thread#interrupt interrupted}.
      * <p>Acquires a permit, if one is available and returns immediately,
      * with the value <tt>true</tt>,
