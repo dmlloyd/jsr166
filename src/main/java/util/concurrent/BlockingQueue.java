@@ -101,11 +101,11 @@ public interface BlockingQueue<E> extends Queue<E> {
      */
     boolean add(E x);
 
-    /**
-     * @throws IllegalStateException if this queue is full
-     * @throws NullPointerException if <tt>x<tt> is <tt>null</tt>.
-     */
-    boolean addAll(Collection c);
+    //    /**
+    //     * @throws IllegalStateException if this queue is full
+    //     * @throws NullPointerException if <tt>x<tt> is <tt>null</tt>.
+    //     */
+    //    boolean addAll(Collection<? extends E> c);
 
     /** 
      * @throws NullPointerException if <tt>x<tt> is <tt>null</tt>.
