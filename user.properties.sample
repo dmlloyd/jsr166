@@ -6,5 +6,10 @@
 # $Id$
 # ---------------------------------------------------------------------------
 
+
 # ----- Restrict to test cases matching this pattern -----
-#testcase = Executors
+#testcase = PriorityQueue
+
+
+# ----- Show build warnings (-warnunchecked) -----
+#build.warnings = true
