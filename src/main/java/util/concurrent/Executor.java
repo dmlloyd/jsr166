@@ -93,7 +93,7 @@ public interface Executor {
      * thread, at the discretion of the <tt>Executor</tt> implementation.
      *
      * @param command the runnable task
-     * @throws CannotExecuteException if command cannot be submitted for
+     * @throws ExecutionException if command cannot be submitted for
      * execution
      */
     void execute(Runnable command);
