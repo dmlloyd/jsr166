@@ -1,0 +1,10 @@
+# ---------------------------------------------------------------------------
+# Developer-specific properties
+#
+# Modify this file to taste and save as user.properties
+#
+# $Id$
+# ---------------------------------------------------------------------------
+
+# ----- Restrict to test cases matching this pattern -----
+#testcase = Executors
