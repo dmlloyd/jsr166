@@ -79,13 +79,4 @@ public interface ExecutorService extends Executor {
     boolean awaitTermination(long timeout, TimeUnit unit)
         throws InterruptedException;
 
-
-    /**
-     * Prevent this task from executing if it has not already
-     * commenced executing. This method provides only best-effort
-     * effects, and may fail for any reason.
-     * d
-     * #return true if the task was removed
-     */
-    boolean remove(Runnable task);
 }
