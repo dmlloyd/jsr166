@@ -275,6 +275,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
 
     /**
      * Creates an instance of <tt>ReentrantLock</tt>.
+     * This is equivalent to using <tt>ReentrantLock(false)</tt>.
      */
     public ReentrantLock() { 
         fair = false;
