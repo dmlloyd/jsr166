@@ -611,8 +611,6 @@ public class ReentrantLock extends ReentrantLockQueueNode implements Lock, java.
      *
      * @throws InterruptedException if the current thread is interrupted
      *
-     * @fixme The interrupt semantics here are inconsistent with those in
-     * Lock
      */
     public void lockInterruptibly() throws InterruptedException { 
         Thread current = Thread.currentThread();
@@ -698,8 +696,6 @@ public class ReentrantLock extends ReentrantLockQueueNode implements Lock, java.
      *
      * @throws InterruptedException if the current thread is interrupted
      *
-     * @fixme The interrupt semantics here are inconsistent with those in
-     * Lock
      */
     public boolean tryLock(long timeout, TimeUnit unit) throws InterruptedException {
         if (unit == null)
