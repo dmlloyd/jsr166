@@ -83,7 +83,7 @@ public class AtomicMarkableReference<V> {
      * @param newMark the new value for the mark
      * @return true if successful
      */
-    public boolean attemptUpdate(V       expectedReference,
+    public boolean compareAndSet(V       expectedReference,
                                  V       newReference,
                                  boolean expectedMark,
                                  boolean newMark) {
@@ -91,7 +91,7 @@ public class AtomicMarkableReference<V> {
         return  expectedReference == current.reference &&
             expectedMark == current.bit &&
             ((newReference == current.reference && newMark == current.bit) ||
-             atomicRef.attemptUpdate(current,
+             atomicRef.compareAndSet(current,
                                      new ReferenceBooleanPair(newReference,
                                                               newMark)));
     }
@@ -125,7 +125,7 @@ public class AtomicMarkableReference<V> {
         ReferenceBooleanPair current = (ReferenceBooleanPair)(atomicRef.get());
         return  expectedReference == current.reference &&
             (newMark == current.bit ||
-             atomicRef.attemptUpdate(current,
+             atomicRef.compareAndSet(current,
                                      new ReferenceBooleanPair(expectedReference,
                                                               newMark)));
     }
