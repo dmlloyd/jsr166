@@ -30,8 +30,10 @@ import java.util.List;
 public interface ExecutorService extends Executor {
 
     /**
-     * Initiates an orderly shutdown in which previously submitted tasks
-     * are executed, but no new tasks will be accepted.
+     * Initiates an orderly shutdown in which previously submitted
+     * tasks are executed, but no new tasks will be
+     * accepted. Invocation has no additional effect if already shut
+     * down.
      *
      */
     void shutdown();
