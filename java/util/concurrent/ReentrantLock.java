@@ -44,7 +44,7 @@ package java.util.concurrent;
  * </pre>
  *
  * <p>This class supports the interruption of lock acquisition and provides a 
- * {@link #newCondition Condition} implemenatation that supports the 
+ * {@link #newCondition Condition} implementation that supports the 
  * interruption of thread suspension.
  *
  * <p>Except where noted, passing a <tt>null</tt> value for any parameter 
