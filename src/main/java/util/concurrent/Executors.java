@@ -69,7 +69,7 @@ public class Executors {
             (new ThreadPoolExecutor(nThreads, nThreads,
                                     0L, TimeUnit.MILLISECONDS,
                                     new LinkedBlockingQueue<Runnable>(),
-                                    threadFactory, null));
+                                    threadFactory));
     }
 
     /**
@@ -104,7 +104,7 @@ public class Executors {
             (new ThreadPoolExecutor(1, 1,
                                     0L, TimeUnit.MILLISECONDS,
                                     new LinkedBlockingQueue<Runnable>(),
-                                    threadFactory, null));
+                                    threadFactory));
     }
 
     /**
@@ -141,7 +141,7 @@ public class Executors {
             (new ThreadPoolExecutor(0, Integer.MAX_VALUE,
                                     60, TimeUnit.SECONDS,
                                     new SynchronousQueue<Runnable>(),
-                                    threadFactory, null));
+                                    threadFactory));
     }
 
     /**
