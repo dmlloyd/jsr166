@@ -62,7 +62,7 @@ public interface Future<V> extends Cancellable {
      * retrieves its result.
      *
      * @return computed result
-     * @throws CancellationException here???
+     * @throws CancellationException if this future was cancelled.
      * @throws ExecutionException if underlying computation threw an
      * exception
      * @throws InterruptedException if current thread was interrupted
