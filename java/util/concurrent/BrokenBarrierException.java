@@ -4,7 +4,7 @@ package java.util.concurrent;
  * Exception thrown when a thread tries to wait upon a barrier that is
  * in a broken state, or which enters the broken state while the thread
  * is waiting.
- * 
+ *
  * @see CyclicBarrier
  *
  * @since 1.5
@@ -13,7 +13,7 @@ package java.util.concurrent;
  * @editor $Author$
  *
  */
-public class BrokenBarrierException extends Exception {  
+public class BrokenBarrierException extends Exception {
     /**
      * Constructs a <tt>BrokenBarrierException</tt> with no specified detail
      * message.
@@ -21,12 +21,12 @@ public class BrokenBarrierException extends Exception {
     public BrokenBarrierException() {}
 
     /**
-     * Constructs a <tt>BrokenBarrierException</tt> with the specified 
+     * Constructs a <tt>BrokenBarrierException</tt> with the specified
      * detail message.
      *
-     * @param detail the detail message
+     * @param message the detail message
      */
-    public BrokenBarrierException(String detail) {
-        super(detail);
+    public BrokenBarrierException(String message) {
+        super(message);
     }
 }

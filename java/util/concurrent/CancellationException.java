@@ -9,7 +9,7 @@ package java.util.concurrent;
  * @revised $Date$
  * @editor $Author$
  */
-public class CancellationException extends IllegalStateException {  
+public class CancellationException extends IllegalStateException {
 
     /**
      * Constructs a <tt>CancellationException</tt> with no detail message.
@@ -20,9 +20,9 @@ public class CancellationException extends IllegalStateException {
      * Constructs a <tt>CancellationException</tt> with the specified detail
      * message.
      *
-     * @param detail the detail message
+     * @param message the detail message
      */
-    public CancellationException(String detail) {
-        super(detail);
+    public CancellationException(String message) {
+        super(message);
     }
 }
