@@ -7,7 +7,7 @@
 package java.util.concurrent;
 
 /**
- * A handler for tasks that cannot be executed by a {@link ThreadedExecutor}.
+ * A handler for tasks that cannot be executed by a {@link ThreadPoolExecutor}.
  *
  * @since 1.5
  *
@@ -17,7 +17,7 @@ package java.util.concurrent;
  * @author Doug Lea
  */
 public interface RejectedExecutionHandler {
-    
+
     /**
      * Method invoked by <tt>ThreadPoolExecutor</tt> when
      * <tt>execute</tt> cannot submit a task. This may occur when no
