@@ -117,7 +117,6 @@ import java.util.concurrent.TimeUnit;
  * @see ReentrantLock
  * @see Condition
  * @see ReadWriteLock
- * @see Locks
  *
  * @since 1.5
  * @spec JSR-166
