@@ -37,7 +37,7 @@ package java.util.concurrent;
  * @editor $Author$
  * @author Doug Lea
  */
-public class FutureTask<V> extends CancellableTask implements Cancellable, Future<V>, Runnable {
+public class FutureTask<V> extends CancellableTask implements Future<V> {
 
     /**
      * Constructs a <tt>FutureTask</tt> that will upon running, execute the
