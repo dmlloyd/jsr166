@@ -561,7 +561,7 @@ public class ThreadPoolExecutor implements ExecutorService {
     /**
      * Creates a new <tt>ThreadPoolExecutor</tt> with the given
      * initial parameters.  It may be more convenient to use one of
-     * the {@link @Executors} factory methods instead of this general
+     * the {@link Executors} factory methods instead of this general
      * purpose constructor.
      *
      * @param corePoolSize the number of threads to keep in the
