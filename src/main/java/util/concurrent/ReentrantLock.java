@@ -616,10 +616,15 @@ public class ReentrantLock extends ReentrantLockQueueNode implements Lock, java.
      */
     public void lockInterruptibly() throws InterruptedException { 
         Thread current = Thread.currentThread();
-        if (Thread.interrupted() ||
-            (!canBarge() || !acquireOwner(current)) &&
-            !doLock(current, null, true, 0))
-            throw new InterruptedException();
+        if (!Thread.interrupted()) {
+            if (canBarge() && !acquireOwner(current))
+                return;
+            if (doLock(current, null, true, 0))
+                return;
+            else
+                Thread.interrupted(); // clear interrupt ststus
+        }
+        throw new InterruptedException();
     }
 
     /**
