@@ -14,24 +14,23 @@ package java.util.concurrent;
  * be changed, nor can the computation be restarted or cancelled.
  *
  * <p>
- * <b>Sample Usage</b> <p>
+ * <b>Sample Usage</b> (Note that the following classes are all
+ * made-up.) <p>
  * <pre>
- * class Image { ... };
- * class ImageRenderer { Image render(byte[] raw); }
+ * class ArchiveSearcher { String search(String target); }
  * class App {
  *   Executor executor = ...
- *   ImageRenderer renderer = ...
- *   void display(final byte[] rawimage) throws InterruptedException {
- *     Future futureImage =
- *       new FutureTask(new Callable() {
- *         public Object call() {
- *           return renderer.render(rawImage);
+ *   ArchiveSearcher searcher = ...
+ *   void showSearch(final String target) throws InterruptedException {
+ *     Future<String> future =
+ *       new FutureTask<String>(new Callable<String>() {
+ *         public String call() {
+ *           return searcher.search(target);
  *       }});
- *     executor.execute(futureImage);
- *     drawBorders(); // do other things while executing
- *     drawCaption();
+ *     executor.execute(future);
+ *     displayOtherThings(); // do other things while searching
  *     try {
- *       drawImage((Image)(futureImage.get())); // use future
+ *       displayText(future.get()); // use future
  *     }
  *     catch (ExecutionException ex) { cleanup(); return; }
  *   }
