@@ -26,7 +26,7 @@ public class Executors {
      * A wrapper class that exposes only the ExecutorService methods
      * of an implementation.
      */
-    static private class DelegatedExecutorService implements ExecutorService {
+    private static class DelegatedExecutorService implements ExecutorService {
         private final ExecutorService e;
         DelegatedExecutorService(ExecutorService executor) { e = executor; }
         public void execute(Runnable command) { e.execute(command); }
