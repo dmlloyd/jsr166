@@ -79,7 +79,7 @@ public final class TimeUnit implements java.io.Serializable {
     /**
      * Perform a timed <tt>Object.wait</tt> using the current time unit.
      * This is a convenience method that converts timeout arguments into the
-     * form required by the <tt>Object.wait</tt> method.
+     * form required by the <tt>Object.wait</tt> method. 
      * <p>For example, you could implement a blocking <tt>poll</tt> method (see
      * {@link BlockingQueue#poll BlockingQueue.poll} using:
      * <pre>  public synchronized  Object poll(long timeout, TimeUnit unit) throws InterruptedException {
@@ -147,8 +147,9 @@ public final class TimeUnit implements java.io.Serializable {
 
     /**
      * Utility method to compute the excess-nanosecond argument to
-     * wait, sleep, join.
-     * @fixme overflow?
+     * wait, sleep, join. The results may overflow, so public methods
+     * invoking this should document possible overflow unless
+     * overflow is known not to be possible for the given arguments.
      */
     private int excessNanos(long time, long ms) {
         if (index == NS)
