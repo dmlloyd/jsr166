@@ -260,7 +260,8 @@ public interface Condition {
     void awaitUninterruptibly();
 
     /**
-     * Causes the current thread to wait until it is signalled or interrupted,
+     * Causes the current thread to wait until it is signalled or 
+     * {@link Thread#interrupt interrupted},
      * or the specified waiting time elapses.
      *
      * <p>The lock associated with this condition is atomically 
