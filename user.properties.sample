@@ -19,6 +19,10 @@ gjc.novariance = true
 gjc.warnunchecked = false
 
 
+# ----- Skip the java.lang.Thread* classes? (default false) -----
+build.nothreads = false
+
+
 # ----- Use emulation classes? (default true for Windows, false otherwise) -----
 #build.emulation = true
 
