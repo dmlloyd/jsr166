@@ -7,16 +7,18 @@
 package java.util.concurrent;
 
 /**
- * A <tt>CountDownLatch</tt> allows one set of threads to wait until
- * the actions of another set of threads allow the first set to proceed.
- * <p>A <tt>CountDownLatch</tt> is initialized with a given <em>count</em>. 
- * The {@link #await} methods block until the current {@link #getCount count}
- * reaches zero due to invocations of the {@link #countDown} method,
- * after which all waiting threads are
+ * A synchronization aid that allows a set of threads to wait until
+ * the actions of another set of threads allow the first set to
+ * proceed.
+ *
+ * <p>A <tt>CountDownLatch</tt> is initialized with a given
+ * <em>count</em>.  The {@link #await} methods block until the current
+ * {@link #getCount count} reaches zero due to invocations of the
+ * {@link #countDown} method, after which all waiting threads are
  * released and any subsequent invocations of {@link #await} return
- * immediately. This is a one-shot phenomenon -- the count
- * cannot be reset.  If you need a version that resets the count,
- * consider using a {@link CyclicBarrier}.
+ * immediately. This is a one-shot phenomenon -- the count cannot be
+ * reset.  If you need a version that resets the count, consider using
+ * a {@link CyclicBarrier}.
  *
  * <p>A <tt>CountDownLatch</tt> is a versatile synchronization tool
  * and can be used for a number of purposes. 

@@ -8,9 +8,9 @@ package java.util.concurrent;
 import java.util.Queue;
 
 /**
- * A <tt>BlockingQueue</tt> is a {@link java.util.Queue} that
- * additionally supports operations that wait for elements to exist
- * when taking them, and wait for space to exist when putting them.
+ * A {@link java.util.Queue} that additionally supports operations
+ * that wait for elements to exist when taking them, and wait for
+ * space to exist when putting them.
  *
  * <p> <tt>BlockingQueues</tt> do not accept <tt>null</tt> elements.
  * Implementations throw <tt>IllegalArgumentException</tt> on attempts
