@@ -45,18 +45,7 @@ package java.util.concurrent;
  * @editor $Author$
  * @author Doug Lea
  */
-public interface Future<V> {
-
-    /**
-     * Returns <tt>true</tt> if the underlying task has completed.
-     *
-     * Completion may be due to normal termination, an exception, or
-     * cancellation -- in all of these cases, this method will return
-     * <tt>true</tt>.
-     *
-     * @return <tt>true</tt> if the underlying task has completed
-     */
-    boolean isDone();
+public interface Future<V> extends Cancellable {
 
     /**
      * Waits if necessary for computation to complete, and then
