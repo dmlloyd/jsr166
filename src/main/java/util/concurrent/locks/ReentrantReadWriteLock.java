@@ -385,14 +385,14 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         }
 
         public boolean tryLock(long time, TimeUnit unit) throws InterruptedException {
-            long startTime = TimeUnit.nanoTime();
+            long startTime = System.nanoTime();
             long nanos = unit.toNanos(time);
             if (!entryLock.tryLock(nanos, TimeUnit.NANOSECONDS)) 
                 return false;
             if (entryLock.getHoldCount() > 1) 
                 return true;
             
-            nanos -= TimeUnit.nanoTime() - startTime;
+            nanos -= System.nanoTime() - startTime;
             try {
                 if (!tryWriterEnter(nanos)) {
                     entryLock.unlock();
