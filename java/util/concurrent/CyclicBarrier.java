@@ -201,7 +201,7 @@ public class CyclicBarrier {
     /**
      * Reset the barrier to its initial state.  If any parties are
      * currently waiting at the barrier, they will return with a
-     * {@link BrokenBarrierException} before the barrier is fully reset.
+     * {@link BrokenBarrierException}.
      */
     public void reset() {
         // for now
