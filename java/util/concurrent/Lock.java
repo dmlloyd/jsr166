@@ -26,7 +26,7 @@ package java.util.concurrent;
  * removes the automatic release of locks that occurs with 
  * <tt>synchronized</tt> methods and statements. For the simplest usage
  * the following idiom should be used:
- * <pre><tt>    Lock l = ...; 
+ * <pre><tt>     Lock l = ...; 
  *     l.lock();
  *     try {
  *         // access the resource protected by this lock
@@ -118,7 +118,7 @@ public interface Lock {
 
     /**
      * Release the lock.
-     * <p>Whether or not it is an error for thread to release a lock that
+     * <p>Whether or not it is an error for a thread to release a lock that
      * it has not acquired is dependent on the concrete lock type.
      **/
     public void unlock();
