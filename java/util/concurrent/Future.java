@@ -38,9 +38,10 @@ package java.util.concurrent;
  * }
  * </pre>
  *
+ * @since 1.5
  * @see FutureTask
  * @see Executor
- * @since 1.5
+ *
  * @spec JSR-166
  * @revised $Date$
  * @editor $Author$
@@ -49,6 +50,7 @@ public interface Future<V> {
 
     /**
      * Returns <tt>true</tt> if the underlying task has completed.
+     *
      * @fixme relation to isDone in Cancellable?
      *
      * @return <tt>true</tt> if underlying task has completed

@@ -10,6 +10,7 @@ package java.util.concurrent;
  * enabling applications to use special thread subclasses, priorities, etc.
  *
  * @since 1.5
+ *
  * @spec JSR-166
  * @revised $Date$
  * @editor $Author$

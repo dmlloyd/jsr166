@@ -5,11 +5,14 @@
 package java.util.concurrent;
 
 /**
- * Thrown when attempting to retrieve the result of a task
- * that was cancelled before it completed.
+ * Indicates that the result of a value-producing task, such as a
+ * {@link FutureTask}, cannot be retrieved because the task was cancelled.
  *
- * @see Cancellable
  * @since 1.5
+ * @see Cancellable
+ * @see FutureTask#get
+ * @see FutureTask#get(long, TimeUnit)
+ *
  * @spec JSR-166
  * @revised $Date$
  * @editor $Author$

@@ -5,9 +5,10 @@
 package java.util.concurrent;
 
 /**
- * A handler for tasks that cannot be executed by a <tt>ThreadExecutor</tt>.
+ * A handler for tasks that cannot be executed by a {@link ThreadedExecutor}.
  *
  * @since 1.5
+ *
  * @spec JSR-166
  * @revised $Date$
  * @editor $Author$
@@ -15,7 +16,7 @@ package java.util.concurrent;
 public interface CannotExecuteHandler {
     
     /**
-     * Method invoked by <tt>ThreadExecutor</tt> when <tt>execute</tt> cannot
+     * Method invoked by <tt>ThreadedExecutor</tt> when <tt>execute</tt> cannot
      * submit a task. This may occur when no more threads or queue slots are
      * available because their bounds would be exceeded, or upon
      * shutdown of the Executor. The <tt>isShutdown</tt> parameter can be
