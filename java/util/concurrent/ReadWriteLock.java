@@ -67,7 +67,7 @@ package java.util.concurrent;
  * You should consider all of these things when evaluating the suitability
  * of a given implementation for your application.
  *
- * @see ReentrantLockReadWriteLock
+ * @see ReentrantReadWriteLock
  * @see Lock
  * @see ReentrantLock
  *
