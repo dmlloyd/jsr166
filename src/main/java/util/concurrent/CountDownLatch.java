@@ -23,7 +23,7 @@ import java.util.concurrent.locks.*;
  * <p>A <tt>CountDownLatch</tt> is a versatile synchronization tool
  * and can be used for a number of purposes.  A
  * <tt>CountDownLatch</tt> initialized with a count of one serves as a
- * simple on/off latch, or gate: all threads invoking {@link #await}
+ * simple on/off latch, or gate: all threads invoking {@link #wait}
  * wait at the gate until it is opened by a thread invoking {@link
  * #countDown}.  A <tt>CountDownLatch</tt> initialized to <em>N</em>
  * can be used to make one thread wait until <em>N</em> threads have
