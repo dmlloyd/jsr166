@@ -90,9 +90,9 @@ public interface Executor {
      * may execute in a new thread, in a pooled thread, or in the calling
      * thread, at the discretion of the <tt>Executor</tt> implementation.
      *
-     * @param task the runnable task
+     * @param command the runnable task
      * @throws RejectedExecutionException if task cannot be submitted for
      * execution
      */
-    void execute(Runnable task);
+    void execute(Runnable command);
 }
