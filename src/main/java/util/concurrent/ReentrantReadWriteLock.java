@@ -335,6 +335,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
                 writerEnter();
             }
             catch (InterruptedException ie) {
+                writing = false;
                 entryLock.unlock();
                 throw ie;
             }
@@ -425,9 +426,4 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
     }
 
 }
-
-
-
-
-
 

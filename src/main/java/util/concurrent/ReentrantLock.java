@@ -269,7 +269,7 @@ public class ReentrantLock extends ReentrantLockQueueNode
 
     /**
      * Return whether lock wait queue is empty
-     * @return true if no threrads are waiting for lock
+     * @return true if no threads are waiting for lock
      */
     final boolean queueEmpty() {
         ReentrantLockQueueNode h = head; // force order of the volatile reads
