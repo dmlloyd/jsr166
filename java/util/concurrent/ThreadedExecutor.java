@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * An executor that executes submitted tasks on one or more dedicated threads.
  *
- * @fixme ThreadFactory, CannotExecuteHandler, Queue
+ * @fixme Document ThreadFactory, CannotExecuteHandler, Queue
  *
  * <p>A <tt>ThreadedExecutor</tt> can be shut down, which will cause it to stop
  * accepting new tasks.  After being shut down, the executor will 
