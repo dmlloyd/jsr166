@@ -19,18 +19,19 @@ package java.util.concurrent;
  * @editor $Author$
  * @see FutureTask
  * @see Executor
+ * @author Doug Lea
  */
 public interface Cancellable {
 
     /**
      * Attempt to cancel execution of this task.  This attempt will
-     * fail if the task has already completed, already been cancelled, or could not be
-     * cancelled for some other reason. If successful, and this task
-     * has not started when <tt>cancel</tt> is called, this task will
-     * never run.  If the task has already started, then the
-     * <tt>interruptIfRunning</tt> parameter determines whether the
-     * thread executing this task should be interrupted in an attempt
-     * to stop the task.
+     * fail if the task has already completed, already been cancelled,
+     * or could not be cancelled for some other reason. If successful,
+     * and this task has not started when <tt>cancel</tt> is called,
+     * this task will never run.  If the task has already started,
+     * then the <tt>interruptIfRunning</tt> parameter determines
+     * whether the thread executing this task should be interrupted in
+     * an attempt to stop the task.
      *
      * @param mayInterruptIfRunning <tt>true</tt> if the thread executing this
      * task should be interrupted; otherwise, in-progress tasks are allowed

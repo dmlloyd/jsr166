@@ -45,6 +45,7 @@ package java.util.concurrent;
  * @spec JSR-166
  * @revised $Date$
  * @editor $Author$
+ * @author Doug Lea
  */
 public interface Future<V> {
 
@@ -63,8 +64,10 @@ public interface Future<V> {
      *
      * @return computed result
      * @throws CancellationException here???
-     * @throws ExecutionException if underlying computation threw an exception
-     * @throws InterruptedException if current thread was interrupted while waiting
+     * @throws ExecutionException if underlying computation threw an
+     * exception
+     * @throws InterruptedException if current thread was interrupted
+     * while waiting
      */
     V get() throws InterruptedException, ExecutionException;
 
@@ -75,8 +78,10 @@ public interface Future<V> {
      * @param timeout the maximum time to wait
      * @param granularity the time unit of the timeout argument
      * @return computed result
-     * @throws ExecutionException if underlying computation threw an exception
-     * @throws InterruptedException if current thread was interrupted while waiting
+     * @throws ExecutionException if underlying computation threw an
+     * exception
+     * @throws InterruptedException if current thread was interrupted
+     * while waiting
      * @throws TimeoutException if the wait timed out
      */
     V get(long timeout, TimeUnit granularity)

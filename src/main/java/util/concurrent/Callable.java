@@ -7,16 +7,17 @@
 package java.util.concurrent;
 
 /**
- * An inteface for describing an asynchronous task that returns a result and may throw an exception.
- * Implementors define a single method with no arguments called <tt>call</tt>.
+ * A task that returns a result and may throw an exception.
+ * Implementors define a single method with no arguments called
+ * <tt>call</tt>.
  *
- * <p>The <tt>Callable</tt> interface is similar to {@link Runnable}, in that
- * both are designed for classes whose instances are potentially executed by another thread.
- * A <tt>Runnable</tt>, however, does not return a result and cannot throw a
- * checked exception.
+ * <p>The <tt>Callable</tt> interface is similar to {@link Runnable},
+ * in that both are designed for classes whose instances are
+ * potentially executed by another thread.  A <tt>Runnable</tt>,
+ * however, does not return a result and cannot throw a checked
+ * exception.
  *
- * @fixme Should "asynchronous task" be defined somewhere?
- *
+
  * @since 1.5
  * @see Executor
  * @see FutureTask
@@ -24,6 +25,7 @@ package java.util.concurrent;
  * @spec JSR-166
  * @revised $Date$
  * @editor $Author$
+ * @author Doug Lea
  */
 public interface Callable<V> {
     /**

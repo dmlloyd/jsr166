@@ -19,6 +19,7 @@ import java.util.*;
  * @spec JSR-166
  * @revised $Date$
  * @editor $Author$
+ * @author Doug Lea
  */
 public class Executors {
 
@@ -60,7 +61,7 @@ public class Executors {
      * ThreadFactory to create new threads when needed.
      *
      * @param nThreads the number of threads in the pool
-     * @param threadfactory the factory to use when creating new threads
+     * @param threadFactory the factory to use when creating new threads
      * @return the newly created thread pool
      */
     public static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory threadFactory) {
@@ -93,7 +94,7 @@ public class Executors {
      * Creates an Executor that uses a single worker thread operating
      * off an unbounded queue, and uses the provided ThreadFactory to
      * create new threads when needed.
-     * @param threadfactory the factory to use when creating new
+     * @param threadFactory the factory to use when creating new
      * threads
      *
      * @return the newly-created single-threaded Executor
@@ -132,7 +133,7 @@ public class Executors {
      * will reuse previously constructed threads when they are
      * available, and uses the provided
      * ThreadFactory to create new threads when needed.
-     * @param threadfactory the factory to use when creating new threads
+     * @param threadFactory the factory to use when creating new threads
      * @return the newly created thread pool
      */
     public static ExecutorService newCachedThreadPool(ThreadFactory threadFactory) {
@@ -202,6 +203,8 @@ public class Executors {
      * @return a Future representing pending completion of the task
      * @throws RejectedExecutionException if task cannot be scheduled
      * for execution
+     * @throws InterruptedException if interrupted while waiting for
+     * completion
      */
     public static <T> T invoke(Executor executor, Callable<T> task)
             throws ExecutionException, InterruptedException {

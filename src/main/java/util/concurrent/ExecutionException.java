@@ -7,7 +7,8 @@
 package java.util.concurrent;
 
 /**
- * Thrown when attempting to retrieve the result of a task that aborted.
+ * Exception thrown when attempting to retrieve the result of a task
+ * that aborted.
  *
  * @since 1.5
  * @see Future
@@ -15,6 +16,7 @@ package java.util.concurrent;
  * @spec JSR-166
  * @revised $Date$
  * @editor $Author$
+ * @author Doug Lea
  */
 public class ExecutionException extends Exception {
 

@@ -16,6 +16,7 @@ import sun.misc.Unsafe;
  * @spec JSR-166
  * @revised $Date$
  * @editor $Author$
+ * @author Doug Lea
  */
 public class AtomicBoolean implements java.io.Serializable {
     // setup to use Unsafe.compareAndSwapInt for updates
@@ -24,10 +25,10 @@ public class AtomicBoolean implements java.io.Serializable {
 
     static {
       try {
-        valueOffset = 
-          unsafe.objectFieldOffset(AtomicBoolean.class.getDeclaredField("value"));
+        valueOffset = unsafe.objectFieldOffset
+            (AtomicBoolean.class.getDeclaredField("value"));
       }
-      catch(Exception ex) { throw new Error(ex); }
+      catch (Exception ex) { throw new Error(ex); }
     }
 
     private volatile int value;
@@ -63,8 +64,8 @@ public class AtomicBoolean implements java.io.Serializable {
      * @return true if successful
      */
     public final boolean compareAndSet(boolean expect, boolean update) {
-        int e = expect? 1 : 0;
-        int u = update? 1 : 0;
+        int e = expect ? 1 : 0;
+        int u = update ? 1 : 0;
         return unsafe.compareAndSwapInt(this, valueOffset, e, u);
     }
 
@@ -72,11 +73,13 @@ public class AtomicBoolean implements java.io.Serializable {
      * Atomically set the value to the given updated value
      * if the current value <tt>==</tt> the expected value.
      * May fail spuriously.
+     * @param expect the expected value
+     * @param update the new value
      * @return true if successful.
-     **/
+     */
     public boolean weakCompareAndSet(boolean expect, boolean update) {
-        int e = expect? 1 : 0;
-        int u = update? 1 : 0;
+        int e = expect ? 1 : 0;
+        int u = update ? 1 : 0;
         return unsafe.compareAndSwapInt(this, valueOffset, e, u);
     }
 

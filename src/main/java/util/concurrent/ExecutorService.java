@@ -25,6 +25,7 @@ import java.util.List;
  * @spec JSR-166
  * @revised $Date$
  * @editor $Author$
+ * @author Doug Lea
  */
 public interface ExecutorService extends Executor {
 

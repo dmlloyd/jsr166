@@ -14,6 +14,7 @@ package java.util.concurrent;
  * @spec JSR-166
  * @revised $Date$
  * @editor $Author$
+ * @author Doug Lea
  */
 public interface RejectedExecutionHandler {
     
