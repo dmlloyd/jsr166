@@ -184,7 +184,7 @@ public class ReentrantLock implements Lock {
      *
      * @throws InterruptedException if the current thread is interrupted
      */
-    public boolean tryLock(long time, Clock granularity) throws InterruptedException {
+    public boolean tryLock(long timeout, TimeUnit granularity) throws InterruptedException {
         return false;
     }
 

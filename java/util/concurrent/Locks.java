@@ -128,8 +128,8 @@ public class Locks {
      *
      * @param lock the object whose monitor lock must be acquired
      * @param action the code to run while holding the monitor lock
-     * @param time the maximum time to wait for the monitor lock
-     * @param granularity the time unit of the <tt>time</tt> argument.
+     * @param timeout the maximum time to wait for the monitor lock
+     * @param granularity the time unit of the <tt>timeout</tt> argument.
      * @return <tt>true</tt> if the monitor lock was acquired and the
      * action executed, and <tt>false</tt>
      * if the waiting time elapsed before the monitor lock was acquired.
@@ -141,7 +141,7 @@ public class Locks {
      *
      **/
     public static boolean attempt(Object lock, Runnable action, 
-                                  long time, Clock granularity)
+                                  long timeout, TimeUnit granularity)
         throws InterruptedException {
 
         return false; // for now;
