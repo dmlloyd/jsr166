@@ -11,6 +11,8 @@ package java.util.concurrent;
  * @see Cancellable
  * @since 1.5
  * @spec JSR-166
+ * @revised $Date$
+ * @editor $Author$
  */
 public class CancellationException extends IllegalStateException {
 

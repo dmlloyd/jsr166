@@ -27,6 +27,8 @@ package java.util.concurrent;
  * @see Executor
  * @since 1.5
  * @spec JSR-166
+ * @revised $Date$
+ * @editor $Author$
  */
 public class FutureTask<V> implements Cancellable, Future<V>, Runnable {
 

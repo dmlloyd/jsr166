@@ -10,6 +10,8 @@ package java.util.concurrent;
  * @see Executor#execute
  * @since 1.5
  * @spec JSR-166
+ * @revised $Date$
+ * @editor $Author$
  */
 public class CannotExecuteException extends RuntimeException {
 
