@@ -1282,9 +1282,10 @@ public class ReentrantLock implements Lock, java.io.Serializable {
 
 
     /**
-     * This class represents a minor performance hack, that
-     * specializes AtomicReferenceFieldUpdater for ReentrantLock owner
-     * field without requiring dynamic checks.
+     * This class represents a minor performance hack, that will
+     * hopefully someday disappear. It specializes
+     * AtomicReferenceFieldUpdater for ReentrantLock owner field
+     * without requiring dynamic checks on method acquire.
      */
     private static class OwnerUpdater extends AtomicReferenceFieldUpdater<ReentrantLock,Thread> {
 
