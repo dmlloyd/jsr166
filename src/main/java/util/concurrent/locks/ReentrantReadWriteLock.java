@@ -63,16 +63,6 @@ import java.util.concurrent.*;
  * <tt>readLock().newCondition()</tt> throws 
  * <tt>UnsupportedOperationException</tt>.
  *
- * <li><b>Ownership</b>
- * <p>While not exposing a means to query the owner, the write lock does
- * internally define an owner and so the write lock can only be released by
- * the thread that acquired it.
- * <p>In contrast, the read lock has no concept of ownership.
- * Consequently, while not a particularly 
- * good practice, it is possible to acquire a read lock in one thread, and 
- * release it in another. This can occasionally be useful.
- *
- *
  * </ul>
  *
  * <p><b>Sample usage</b>. Here is a code sketch showing how to exploit
@@ -104,7 +94,19 @@ import java.util.concurrent.*;
  *   }
  * }
  * </pre>
- *
+ * <h3>Implementation Considerations</h3>
+ * <p>In addition to the above, this <em>reference implementation</em> has the
+ * following property:
+ * <ul>
+ * <li><b>Ownership</b>
+ * <p>While not exposing a means to query the owner, the write lock does
+ * internally define an owner and so the write lock can only be released by
+ * the thread that acquired it.
+ * <p>In contrast, the read lock has no concept of ownership.
+ * Consequently, while not a particularly 
+ * good practice, it is possible to acquire a read lock in one thread, and 
+ * release it in another. This can occasionally be useful.
+ * </ul>
  * @see ReentrantLock
  * @see Condition
  * @see ReadWriteLock
