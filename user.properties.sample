@@ -7,13 +7,21 @@
 # ---------------------------------------------------------------------------
 
 
-# ----- Restrict to test cases matching this pattern -----
-#testcase = PriorityQueue
+# ----- Which gj compiler: 1.3 or 2.0? (default 1.3) -----
+gjc.version = 1.3
 
 
-# ----- Show build warnings (-warnunchecked) -----
-#build.warnings = true
+# ----- Turn on -novariance? (default true, ignored in version 1.3) -----
+gjc.novariance = true
 
 
-# ----- Use non-native emulation classes -----
+# ----- Turn on -warnunchecked? (default false) -----
+gjc.warnunchecked = false
+
+
+# ----- Use emulation classes? (default true for Windows, false otherwise) -----
 #build.emulation = true
+
+
+# ----- Restrict to test cases matching this pattern (omit trailing "Test") -----
+#testcase = PriorityQueue
