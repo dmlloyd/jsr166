@@ -19,6 +19,7 @@ import sun.misc.Unsafe;
  * @author Doug Lea
  */
 public class AtomicBoolean implements java.io.Serializable {
+    private static final long serialVersionUID = 4654671469794556979L;
     // setup to use Unsafe.compareAndSwapInt for updates
     private static final Unsafe unsafe =  Unsafe.getUnsafe();
     private static final long valueOffset;

@@ -21,6 +21,8 @@ package java.util.concurrent;
  * @author Doug Lea
  */
 public class TimeoutException extends Exception {
+    private static final long serialVersionUID = 1900926677490660714L;
+
     /**
      * Constructs a <tt>TimeoutException</tt> with no specified detail
      * message.

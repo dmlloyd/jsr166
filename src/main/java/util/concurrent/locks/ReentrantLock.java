@@ -79,6 +79,8 @@ import sun.misc.*;
  * 
  **/
 public class ReentrantLock implements Lock, java.io.Serializable {
+    private static final long serialVersionUID = 7373984872572414699L;
+
     /*
       The basic fastpath/slowpath algorithm looks like this, ignoring 
       reentrance, cancellation, timeouts, error checking etc:

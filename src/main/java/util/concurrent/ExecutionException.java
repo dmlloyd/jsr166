@@ -20,6 +20,7 @@ package java.util.concurrent;
  * @author Doug Lea
  */
 public class ExecutionException extends Exception {
+    private static final long serialVersionUID = 7830266012832686185L;
 
     /**
      * Constructs a <tt>ExecutionException</tt> with no detail message.

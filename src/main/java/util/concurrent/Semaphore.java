@@ -99,8 +99,8 @@ import java.util.concurrent.locks.*;
  *
  */
 public class Semaphore implements java.io.Serializable {
-    // todo SerialID
-    // uses default serialization, which happens be fine here.
+    private static final long serialVersionUID = 3217036696412297181L;
+
 
     // Fields are package-private to allow the FairSemaphore variant
     // to access.

@@ -21,6 +21,7 @@ package java.util.concurrent;
  * @author Doug Lea
  */
 public class CancellationException extends IllegalStateException {
+    private static final long serialVersionUID = -9202173006928992231L;
 
     /**
      * Constructs a <tt>CancellationException</tt> with no detail message.

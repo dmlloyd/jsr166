@@ -29,6 +29,7 @@ import java.util.concurrent.locks.*;
  *
  */
 public class FairSemaphore extends Semaphore {
+    private static final long serialVersionUID = -3222578661600680210L;
 
     /*
      * Basic algorithm is a variant of the one described
@@ -52,10 +53,10 @@ public class FairSemaphore extends Semaphore {
     }
 
     /** Head of the wait queue */
-    private Node head;
+    private transient Node head;
 
     /** Pointer to last node of the wait queue */
-    private Node last;
+    private transient Node last;
 
     /** Add a new node to wait queue with given number of permits needed */
     private Node enq(long n) { 

@@ -121,6 +121,8 @@ import java.util.Date;
  */
 public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializable  {
 
+    private static final long serialVersionUID = -6992448646407690164L;
+
     /**
      * Creates a new <tt>ReentrantReadWriteLock</tt> with
      * default ordering properties.
