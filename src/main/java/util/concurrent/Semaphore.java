@@ -314,10 +314,7 @@ public class Semaphore implements java.io.Serializable {
      * in the application.
      */
     public void release() {
-        // Even if using fair locks, releases should try to barge in.
-        if (!lock.tryLock())
-            lock.lock();
-
+        lock.lock();
         try {
             ++count;
             available.signal();
