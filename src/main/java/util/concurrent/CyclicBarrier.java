@@ -8,7 +8,7 @@ package java.util.concurrent;
 import java.util.concurrent.locks.*;
 
 /**
- * A synchronization aid that allows a set threads to all wait for
+ * A synchronization aid that allows a set of threads to all wait for
  * each other to reach a common barrier point.  CyclicBarriers are
  * useful in programs involving a fixed sized party of threads that
  * must occasionally wait for each other. The barrier is called
