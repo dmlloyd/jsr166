@@ -187,6 +187,12 @@ public class Locks {
         }
     }
 
+    /**
+     * Return true if the given lock is held by any thread.
+     */
+    public static boolean isLocked(Object lock) {
+        return JSR166Support.isLocked(lock);
+    }
 
     /**
      * Returns a {@link Condition} instance for use with the given object.

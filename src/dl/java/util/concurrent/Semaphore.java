@@ -153,6 +153,10 @@ public class Semaphore implements java.io.Serializable {
             while (count <= 0) cond.await();
             --count;
         }
+        catch (InterruptedException ie) {
+            cond.signal();
+            throw ie;
+        }
         finally {
             lock.unlock();
         }
@@ -272,6 +276,10 @@ public class Semaphore implements java.io.Serializable {
                     return false;
                 nanos = cond.awaitNanos(nanos);
             }
+        }
+        catch (InterruptedException ie) {
+            cond.signal();
+            throw ie;
         }
         finally {
             lock.unlock();

@@ -104,6 +104,7 @@ public class Exchanger<V> {
             }
             catch (InterruptedException ie) {
                 interrupted = ie;
+                taken.signal();
             }
 
             // get and reset item and count after the wait.

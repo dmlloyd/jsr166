@@ -98,6 +98,10 @@ public class FairSemaphore extends Semaphore {
                 cond.await();
             count -= permits;
         }
+        catch (InterruptedException ie) {
+            cond.signal();
+            throw ie;
+        }
         finally {
             lock.unlock();
         }
@@ -239,6 +243,10 @@ public class FairSemaphore extends Semaphore {
                     return false;
                 nanos = cond.awaitNanos(nanos);
             }
+        }
+        catch (InterruptedException ie) {
+            cond.signal();
+            throw ie;
         }
         finally {
             lock.unlock();

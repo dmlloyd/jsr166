@@ -216,11 +216,11 @@ public class ReentrantLock implements Lock, java.io.Serializable {
 
     // Atomics support
 
-    private final static AtomicReferenceFieldUpdater<ReentrantLock, Thread>  ownerUpdater = new AtomicReferenceFieldUpdater<ReentrantLock, Thread>(ReentrantLock.class, "owner");
-    private final static AtomicReferenceFieldUpdater<ReentrantLock, WaitNode> tailUpdater = new AtomicReferenceFieldUpdater<ReentrantLock, WaitNode>(ReentrantLock.class, "tail");
-    private final static AtomicReferenceFieldUpdater<ReentrantLock, WaitNode>  headUpdater = new AtomicReferenceFieldUpdater<ReentrantLock, WaitNode>(ReentrantLock.class, "head");
+    private final static AtomicReferenceFieldUpdater<ReentrantLock, Thread>  ownerUpdater = new AtomicReferenceFieldUpdater<ReentrantLock, Thread>(new ReentrantLock[0], new Thread[0], "owner");
+    private final static AtomicReferenceFieldUpdater<ReentrantLock, WaitNode> tailUpdater = new AtomicReferenceFieldUpdater<ReentrantLock, WaitNode>(new ReentrantLock[0], new WaitNode[0], "tail");
+    private final static AtomicReferenceFieldUpdater<ReentrantLock, WaitNode>  headUpdater = new AtomicReferenceFieldUpdater<ReentrantLock, WaitNode>(new ReentrantLock[0], new WaitNode[0], "head");
     private final static AtomicIntegerFieldUpdater<WaitNode> countUpdater =
-        new AtomicIntegerFieldUpdater<WaitNode>(WaitNode.class, "count");
+        new AtomicIntegerFieldUpdater<WaitNode>(new WaitNode[0], "count");
 
     private boolean acquireOwner(Thread current) {
         return ownerUpdater.compareAndSet(this, null, current);
@@ -511,7 +511,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
 
                 if (status != NO_INTERRUPT && policy != NO_INTERRUPT) {
                     node.thread = null;      // disable signals
-                    node.count = CANCELLED;  // no need for CAS here
+                    countUpdater.set(node, CANCELLED);  // don't need CAS here
                     signalSuccessor(node);
                     return status;
                 }
@@ -644,7 +644,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
             return;
         }
 
-        owner = null;
+        ownerUpdater.set(this, null);
         WaitNode h = head;
         if (h != tail)
             releaseFirst(h);
@@ -865,6 +865,17 @@ public class ReentrantLock implements Lock, java.io.Serializable {
      **/
     public boolean isHeldByCurrentThread() {
         return (owner == Thread.currentThread());
+    }
+
+
+    /**
+     * Queries if this lock is held by any thread. THis method is
+     * designed for use in monitoring, not for synchronization control.
+     * @return <tt>true</tt> if any thread holds this lock and
+     * <tt>false</tt> otherwise.
+     **/
+    public boolean isLocked() {
+        return owner != null;
     }
 
 
