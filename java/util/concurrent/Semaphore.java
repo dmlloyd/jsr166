@@ -216,7 +216,7 @@ public class Semaphore {
      * <p>This method is typically used for debugging and testing purposes.
      * @return the number of permits available in this semaphore.
      */
-    public long getPermits() {
+    public long availablePermits() {
         return permits;
     }
 }
