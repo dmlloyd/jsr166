@@ -57,7 +57,7 @@ package java.util.concurrent;
  * attempt to acquire a lock ({@link #tryLock()}), an attempt to acquire the
  * lock that can be interrupted ({@link #lockInterruptibly}, and an attempt
  * to acquire the lock that can timeout ({@link #tryLock(long, TimeUnit)}).
- * This additionally functionality is also extended to built-in monitor
+ * This additional functionality is also extended to built-in monitor
  * locks through the methods of the {@link Locks} utility class.
  *
  * <p>A <tt>Lock</tt> class can also provide behavior and semantics that is 
