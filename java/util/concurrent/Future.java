@@ -78,8 +78,11 @@ public interface Future<V> {
      * @throws CancellationException here???
      * @throws ExecutionException if underlying computation threw an exception
      * @throws InterruptedException if current thread was interrupted while waiting
-     * @throws TimeOutException if the wait timed out
+     * @throws TimeoutException if the wait timed out
      */
     V get(long timeout, TimeUnit granularity)
-        throws InterruptedException, ExecutionException;
+        throws InterruptedException, ExecutionException, TimeoutException;
 }
+
+
+

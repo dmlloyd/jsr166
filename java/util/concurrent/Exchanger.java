@@ -28,7 +28,7 @@ package java.util.concurrent;
  *             currentBuffer = exchanger.exchange(currentBuffer);
  *         }
  *       }
- *       catch (InterruptedException ex) { }
+ *       catch (InterruptedException ex) { ... handle ... }
  *     }
  *   }
  *
@@ -42,7 +42,7 @@ package java.util.concurrent;
  *             currentBuffer = exchanger.exchange(currentBuffer);
  *         }
  *       }
- *       catch (InterruptedException ex) { }
+ *       catch (InterruptedException ex) { ... handle ...}
  *     }
  *   }
  *
@@ -145,7 +145,8 @@ public class Exchanger<V> {
      * @throws TimeoutException if the specified waiting time elapses before
      * another thread enters the exchange.
      **/
-    public V exchange(V x, long timeout, TimeUnit granularity) throws InterruptedException {
+    public V exchange(V x, long timeout, TimeUnit granularity) 
+        throws InterruptedException, TimeoutException {
         return null; // for now
     }
 
