@@ -21,18 +21,21 @@ package java.util.concurrent;
 public interface Cancellable {
 
     /**
-     * Cancels execution of this task if it has not already completed.
-     * If this task has not started when <tt>cancel</tt> is called, this
-     * task will never run.  If the task has already started, then
-     * the <tt>interruptIfRunning</tt> parameter determines whether the
-     * thread executing this task should be interrupted in an attempt to
-     * stop the task.
+     * Attempts to cancel execution of this task.  This attempt will
+     * fail if the task has already completed or could not be
+     * cancelled for some other reason. If successful, and this task
+     * has not started when <tt>cancel</tt> is called, this task will
+     * never run.  If the task has already started, then the
+     * <tt>interruptIfRunning</tt> parameter determines whether the
+     * thread executing this task should be interrupted in an attempt
+     * to stop the task.
      *
      * @param mayInterruptIfRunning <tt>true</tt> if the thread executing this
      * task should be interrupted; otherwise, in-progress tasks are allowed
      * to complete
-     * @return <tt>true</tt> if task has not already completed or been
-     * cancelled; <tt>false</tt> otherwise
+     * @return <tt>false</tt> if the task could not be cancelled,
+     * typically because is has already completed normally;
+     * <tt>true</tt> otherwise
      */
     boolean cancel(boolean mayInterruptIfRunning);
 
