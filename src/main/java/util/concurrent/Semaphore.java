@@ -54,8 +54,7 @@ import java.util.concurrent.locks.*;
  *          if (used[i]) {
  *            used[i] = false;
  *            return true;
- *          }
- *          else
+ *          } else
  *            return false;
  *       }
  *     }
@@ -166,12 +165,10 @@ public class Semaphore implements java.io.Serializable {
             while (count <= 0) 
                 available.await();
             --count;
-        }
-        catch (InterruptedException ie) {
+        } catch (InterruptedException ie) {
             available.signal();
             throw ie;
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -202,8 +199,7 @@ public class Semaphore implements java.io.Serializable {
             while (count <= 0) 
                 available.awaitUninterruptibly();
             --count;
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -229,8 +225,7 @@ public class Semaphore implements java.io.Serializable {
                 return true;
             }
             return false;
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -291,12 +286,10 @@ public class Semaphore implements java.io.Serializable {
                     return false;
                 nanos = available.awaitNanos(nanos);
             }
-        }
-        catch (InterruptedException ie) {
+        } catch (InterruptedException ie) {
             available.signal();
             throw ie;
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -318,8 +311,7 @@ public class Semaphore implements java.io.Serializable {
         try {
             ++count;
             available.signal();
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -334,8 +326,7 @@ public class Semaphore implements java.io.Serializable {
         lock.lock();
         try {
             return count;
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }

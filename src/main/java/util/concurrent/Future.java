@@ -31,8 +31,7 @@ package java.util.concurrent;
  *     displayOtherThings(); // do other things while searching
  *     try {
  *       displayText(future.get()); // use future
- *     }
- *     catch (ExecutionException ex) { cleanup(); return; }
+ *     } catch (ExecutionException ex) { cleanup(); return; }
  *   }
  * }
  * </pre>

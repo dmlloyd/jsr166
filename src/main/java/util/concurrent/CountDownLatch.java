@@ -71,8 +71,7 @@ import java.util.concurrent.locks.*;
  *        startSignal.await();
  *        doWork();
  *        doneSignal.countDown();
- *      }
- *      catch (InterruptedException ex) {} // return;
+ *      } catch (InterruptedException ex) {} // return;
  *   }
  *
  *   void doWork() { ... }
@@ -110,8 +109,7 @@ import java.util.concurrent.locks.*;
  *      try {
  *        doWork(i);
  *        doneSignal.countDown();
- *      }
- *      catch (InterruptedException ex) {} // return;
+ *      } catch (InterruptedException ex) {} // return;
  *   }
  *
  *   void doWork() { ... }
@@ -175,8 +173,7 @@ public class CountDownLatch {
         try {
             while (count != 0)
                 zero.await();
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -235,8 +232,7 @@ public class CountDownLatch {
                 if (nanos <= 0)
                     return false;
             }
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -257,8 +253,7 @@ public class CountDownLatch {
         try {
             if (count > 0 && --count == 0)
                 zero.signalAll();
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -272,8 +267,7 @@ public class CountDownLatch {
         lock.lock();
         try {
             return count;
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }

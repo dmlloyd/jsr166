@@ -447,8 +447,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
             if ((!fair || queueEmpty()) && acquireOwner(current))
                 return true;
             p = enq(node);
-        }
-        else 
+        } else 
             p = node.prev;
 
         boolean wasInterrupted = false;
@@ -524,14 +523,12 @@ public class ReentrantLock implements Lock, java.io.Serializable {
                     if (startTime == 0) {
                         startTime = now;
                         timeLeft = nanos;
-                    }
-                    else {
+                    } else {
                         timeLeft = nanos - (now - startTime);
                         if (timeLeft <= 0)
                             timeLeft = -1;
                     }
-                }
-                else if (!interruptible && Thread.interrupted())
+                } else if (!interruptible && Thread.interrupted())
                     wasInterrupted = true;
 
                 // last chance to avoid blocking

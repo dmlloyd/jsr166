@@ -57,8 +57,7 @@ import java.util.Queue;
  *   public void run() {
  *     try {
  *       while(true) { queue.put(produce()); }
- *     }
- *     catch (InterruptedException ex) { ... handle ...}
+ *     } catch (InterruptedException ex) { ... handle ...}
  *   }
  *   Object produce() { ... }
  * }
@@ -69,8 +68,7 @@ import java.util.Queue;
  *   public void run() {
  *     try {
  *       while(true) { consume(queue.take()); }
- *     }
- *     catch (InterruptedException ex) { ... handle ...}
+ *     } catch (InterruptedException ex) { ... handle ...}
  *   }
  *   void consume(Object x) { ... }
  * }

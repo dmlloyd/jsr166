@@ -186,8 +186,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         try {
             if (++exreaders == readers) 
                 writeEnabled.signal(); 
-        }
-        finally {
+        } finally {
             writeCheckLock.unlock();
         }
     }
@@ -205,8 +204,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
                 writeEnabled.await();
                 waitingWriter = false;
             }
-        }
-        finally {
+        } finally {
             writeCheckLock.unlock();
         }
     }
@@ -222,8 +220,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
                 writeEnabled.awaitUninterruptibly();
                 waitingWriter = false;
             }
-        }
-        finally {
+        } finally {
             writeCheckLock.unlock();
         }
     }
@@ -237,8 +234,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
         try {
             boolean ok = (exreaders == readers);
             return ok;
-        }
-        finally {
+        } finally {
             writeCheckLock.unlock();
         }
     }
@@ -261,8 +257,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
                 waitingWriter = false;
             }
             return true;
-        }
-        finally {
+        } finally {
             writeCheckLock.unlock();
         }
     }
@@ -303,8 +298,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             entryLock.lock();
             try {
                 ++readers; 
-            }
-            finally {
+            } finally {
                 entryLock.unlock();
             }
         }
@@ -313,8 +307,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             entryLock.lockInterruptibly();
             try {
                 ++readers; 
-            }
-            finally {
+            } finally {
                 entryLock.unlock();
             }
         }
@@ -331,8 +324,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             try {
                 ++readers; 
                 return true;
-            }
-            finally {
+            } finally {
                 entryLock.unlock();
             }
         }
@@ -343,8 +335,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             try {
                 ++readers; 
                 return true;
-            }
-            finally {
+            } finally {
                 entryLock.unlock();
             }
         }
@@ -371,8 +362,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
             entryLock.lockInterruptibly();
             try {
                 writerEnter();
-            }
-            catch (InterruptedException ie) {
+            } catch (InterruptedException ie) {
                 entryLock.unlock();
                 throw ie;
             }
@@ -405,8 +395,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
                     entryLock.unlock();
                     return false;
                 }
-            }
-            catch (InterruptedException ie) {
+            } catch (InterruptedException ie) {
                 entryLock.unlock();
                 throw ie;
             }
