@@ -157,7 +157,7 @@ public class Exchanger<V> {
     }
 
     /**
-     * Create a new Exchanger
+     * Create a new Exchanger.
      **/
     public Exchanger() {
     }

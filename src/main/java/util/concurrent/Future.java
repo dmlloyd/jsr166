@@ -22,8 +22,8 @@ package java.util.concurrent;
  *   Executor executor = ...
  *   ArchiveSearcher searcher = ...
  *   void showSearch(final String target) throws InterruptedException {
- *     Future<String> future =
- *       new FutureTask<String>(new Callable<String>() {
+ *     Future&lt;String&gt; future =
+ *       new FutureTask&lt;String&gt;(new Callable&lt;String&gt;() {
  *         public String call() {
  *           return searcher.search(target);
  *       }});

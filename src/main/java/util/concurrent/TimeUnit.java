@@ -160,16 +160,16 @@ public final class TimeUnit implements java.io.Serializable {
             return 0;
     }
 
-    /** Unit for one-second granularities */
+    /** Unit for one-second granularities. */
     public static final TimeUnit SECONDS = new TimeUnit(S);
 
-    /** Unit for one-millisecond granularities */
+    /** Unit for one-millisecond granularities. */
     public static final TimeUnit MILLISECONDS = new TimeUnit(MS);
 
-    /** Unit for one-microsecond granularities */
+    /** Unit for one-microsecond granularities. */
     public static final TimeUnit MICROSECONDS = new TimeUnit(US);
 
-    /** Unit for one-nanosecond granularities */
+    /** Unit for one-nanosecond granularities. */
     public static final TimeUnit NANOSECONDS = new TimeUnit(NS);
 
 }
