@@ -28,7 +28,7 @@ public interface Cancellable {
      * thread executing this task should be interrupted in an attempt to
      * stop the task.
      *
-     * @param interruptIfRunning <tt>true</tt> if the thread executing this
+     * @param mayInterruptIfRunning <tt>true</tt> if the thread executing this
      * task should be interrupted; otherwise, in-progress tasks are allowed
      * to complete
      * @return <tt>true</tt> if task has not already completed or been
