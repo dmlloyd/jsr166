@@ -88,7 +88,7 @@ package java.util.concurrent;
  * acquire permits. In particular, barging is permitted, that is, a thread
  * invoking {@link #acquire} can be allocated a permit ahead of a thread
  * that has been waiting. If you need more deterministic guarantees, consider
- * using {@link FifoSemaphore}.
+ * using {@link FairSemaphore}.
  *
  *
  * @since 1.5
