@@ -209,7 +209,7 @@ public class CountDownLatch {
      *
      * <p>If the specified waiting time elapses then the value <tt>false</tt>
      * is returned.
-     * The given waiting time is a best-effort lower bound. If the time is 
+     * If the time is 
      * less than or equal to zero, the method will not wait at all.
      *
      * @param timeout the maximum time to wait

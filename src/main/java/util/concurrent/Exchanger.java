@@ -229,7 +229,7 @@ public class Exchanger<V> {
      *
      * <p>If the specified waiting time elapses then {@link TimeoutException}
      * is thrown.
-     * The given waiting time is a best-effort lower bound. If the time is 
+     * If the time is 
      * less than or equal to zero, the method will not wait at all.
      *
      * @param x the object to exchange
