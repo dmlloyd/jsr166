@@ -4,7 +4,7 @@
  * redistribute this code in any way without acknowledgement.
  */
 
-package java.util.concurrent;
+package java.util.concurrent.locks;
 
 /**
  * A <tt>ReadWriteLock</tt> maintains a pair of associated {@link

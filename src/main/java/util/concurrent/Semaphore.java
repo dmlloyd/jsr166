@@ -5,6 +5,7 @@
  */
 
 package java.util.concurrent;
+import java.util.concurrent.locks.*;
 
 /**
  * A counting semaphore.  Conceptually, a semaphore maintains a set of

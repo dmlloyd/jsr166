@@ -5,6 +5,7 @@
  */
 
 package java.util.concurrent;
+import java.util.concurrent.locks.*;
 
 /**
  * A synchronization aid that allows a set threads to all wait for

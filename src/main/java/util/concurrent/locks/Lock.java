@@ -4,7 +4,8 @@
  * redistribute this code in any way without acknowledgement.
  */
 
-package java.util.concurrent;
+package java.util.concurrent.locks;
+import java.util.concurrent.TimeUnit;
 
 /**
  * <tt>Lock</tt> implementations provide more flexible locking operations than

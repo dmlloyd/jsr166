@@ -5,6 +5,7 @@
  */
 
 package java.util.concurrent;
+import java.util.concurrent.locks.*;
 
 /**
  * An <tt>Exchanger</tt> provides a synchronization point at which two threads
