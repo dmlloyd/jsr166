@@ -1,5 +1,5 @@
 /*
- * @(#)BlockedExecutionException.java
+ * @(#)RejectedExecutionException.java
  */
 
 package java.util.concurrent;
@@ -14,40 +14,40 @@ package java.util.concurrent;
  * @revised $Date$
  * @editor $Author$
  */
-public class BlockedExecutionException extends RuntimeException {
+public class RejectedExecutionException extends RuntimeException {
 
     /**
-     * Constructs a <tt>BlockedExecutionException</tt> with no detail message.
+     * Constructs a <tt>RejectedExecutionException</tt> with no detail message.
      * The cause is not initialized, and may subsequently be
      * initialized by a call to {@link #initCause(Throwable) initCause}.
      */
-    public BlockedExecutionException() { }
+    public RejectedExecutionException() { }
 
     /**
-     * Constructs a <tt>BlockedExecutionException</tt> with the specified detail
+     * Constructs a <tt>RejectedExecutionException</tt> with the specified detail
      * message. The cause is not initialized, and may subsequently be
      * initialized by a call to {@link #initCause(Throwable) initCause}.
      *
      * @param message the detail message
      */
-    public BlockedExecutionException(String message) {
+    public RejectedExecutionException(String message) {
         super(message);
     }
 
     /**
-     * Constructs a <tt>BlockedExecutionException</tt> with the specified detail
+     * Constructs a <tt>RejectedExecutionException</tt> with the specified detail
      * message and cause.
      *
      * @param  message the detail message
      * @param  cause the cause (which is saved for later retrieval by the
      *         {@link #getCause()} method)
      */
-    public BlockedExecutionException(String message, Throwable cause) {
+    public RejectedExecutionException(String message, Throwable cause) {
         super(message, cause);
     }
 
     /**
-     * Constructs a <tt>BlockedExecutionException</tt> with the specified cause.
+     * Constructs a <tt>RejectedExecutionException</tt> with the specified cause.
      * The detail message is set to:
      * <pre>
      *  (cause == null ? null : cause.toString())</pre>
@@ -57,7 +57,7 @@ public class BlockedExecutionException extends RuntimeException {
      * @param  cause the cause (which is saved for later retrieval by the
      *         {@link #getCause()} method)
      */
-    public BlockedExecutionException(Throwable cause) {
+    public RejectedExecutionException(Throwable cause) {
         super(cause);
     }
 }
