@@ -42,6 +42,12 @@ public class AtomicBoolean implements java.io.Serializable {
     }
 
     /**
+     * Creates a new <tt>AtomicBoolean</tt> with initial value <tt>false</tt>.
+     */
+    public AtomicBoolean() {
+    }
+
+    /**
      * Returns the current value.
      *
      * @return the current value
