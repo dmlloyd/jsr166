@@ -271,7 +271,7 @@ public class ThreadPoolExecutor implements ExecutorService {
      * null if none)
      * @return true if successful.
      */
-    boolean addIfUnderCorePoolSize(Runnable firstTask) {
+    private boolean addIfUnderCorePoolSize(Runnable firstTask) {
         Thread t = null;
         mainLock.lock();
         try {
@@ -286,6 +286,15 @@ public class ThreadPoolExecutor implements ExecutorService {
         t.start();
         return true;
     }
+
+    /**
+     * Eagerly (vs by default lazily) start all core threads.
+     */
+    void prestartCoreThreads() {
+        while (addIfUnderCorePoolSize(null)) {
+        }
+    }
+
 
     /**
      * Create and start a new thread only if less than maximumPoolSize
@@ -327,13 +336,13 @@ public class ThreadPoolExecutor implements ExecutorService {
             int stat = shutdownStatus;
             if (stat == SHUTDOWN_NOW)
                 return null;
-            long timeout = keepAliveTime;
-            if (timeout <= 0) // must die immediately for 0 timeout
-                return null;
             if (stat == SHUTDOWN_WHEN_IDLE) // help drain queue before dying
                 return workQueue.poll();
             if (poolSize <= corePoolSize)   // untimed wait if core
                 return workQueue.take();
+            long timeout = keepAliveTime;
+            if (timeout <= 0) // must die immediately for 0 timeout
+                return null;
             Runnable task =  workQueue.poll(timeout, TimeUnit.NANOSECONDS);
             if (task != null)
                 return task;
