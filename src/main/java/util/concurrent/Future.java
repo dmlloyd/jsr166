@@ -51,9 +51,11 @@ public interface Future<V> {
     /**
      * Returns <tt>true</tt> if the underlying task has completed.
      *
-     * @fixme relation to isDone in Cancellable?
+     * Completion may be due to normal termination, an exception, or
+     * cancellation -- in all of these cases, this method will return
+     * <tt>true</tt>.
      *
-     * @return <tt>true</tt> if underlying task has completed
+     * @return <tt>true</tt> if the underlying task has completed
      */
     boolean isDone();
 

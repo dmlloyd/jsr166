@@ -51,9 +51,13 @@ public interface Cancellable {
     boolean isCancelled();
 
     /**
-     * Returns <tt>true</tt> if this task ran to completion or was cancelled.
+     * Returns <tt>true</tt> if this task completed.  
      *
-     * @return <tt>true</tt> if task completed normally or was cancelled
+     * Completion may be due to normal termination, an exception, or
+     * cancellation -- in all of these cases, this method will return
+     * <tt>true</tt>.
+     * 
+     * @return <tt>true</tt> if this task completed.
      */
     boolean isDone();
 }
