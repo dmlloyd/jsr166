@@ -11,12 +11,8 @@ package java.util.concurrent;
  * that aborted by throwing an exception. This exception can be
  * inspected using the {@link #getCause()} method.
  *
- * @since 1.5
  * @see Future
- *
- * @spec JSR-166
- * @revised $Date$
- * @editor $Author$
+ * @since 1.5
  * @author Doug Lea
  */
 public class ExecutionException extends Exception {

@@ -12,11 +12,6 @@ package java.util.concurrent;
  * a task with a {@link ScheduledExecutor}.
  *
  * @since 1.5
- *
- * @spec JSR-166
- * @revised $Date$
- * @editor $Author$
- * @see ScheduledExecutor
  * @author Doug Lea
  */
 public interface ScheduledCancellable extends Delayed, Cancellable {

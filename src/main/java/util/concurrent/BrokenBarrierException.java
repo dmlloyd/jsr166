@@ -14,9 +14,6 @@ package java.util.concurrent;
  * @see CyclicBarrier
  *
  * @since 1.5
- * @spec JSR-166
- * @revised $Date$
- * @editor $Author$
  * @author Doug Lea
  *
  */
