@@ -18,11 +18,11 @@ package java.util.concurrent;
  * the computation be restarted or cancelled.
  *
  * <p>Because <tt>FutureTask</tt> implements <tt>Runnable</tt>, a
- * <tt>FutureTask</tt> can be submitted to an {@link Executor} for 
+ * <tt>FutureTask</tt> can be submitted to an {@link Executor} for
  * current or deferred execution.
  *
- * <p>A <tt>FutureTask</tt> can be used to wrap a <tt>Callable</tt> or 
- * <tt>Runnable</tt> object so that it can be scheduled for execution in a 
+ * <p>A <tt>FutureTask</tt> can be used to wrap a <tt>Callable</tt> or
+ * <tt>Runnable</tt> object so that it can be scheduled for execution in a
  * thread or an <tt>Executor</tt>, cancel
  * computation before the computation completes, and wait for or
  * retrieve the results.  If the computation threw an exception, the
@@ -48,7 +48,7 @@ public class FutureTask<V> extends CancellableTask implements Future<V> {
     public FutureTask(Callable<V> callable) {
         // must set after super ctor call to use inner class
         super();
-        setRunnable(new InnerCancellableFuture(callable));
+        setRunnable(new InnerCancellableFuture<V>(callable));
     }
 
     /**
@@ -63,7 +63,7 @@ public class FutureTask<V> extends CancellableTask implements Future<V> {
      */
     public FutureTask(final Runnable runnable, final V result) {
         super();
-        setRunnable(new InnerCancellableFuture
+        setRunnable(new InnerCancellableFuture<V>
                     (new Callable<V>() {
                         public V call() {
                             runnable.run();
@@ -95,7 +95,7 @@ public class FutureTask<V> extends CancellableTask implements Future<V> {
      * @param timeout the maximum time to wait
      * @param unit the time unit of the timeout argument
      * @return value of this task
-     * @throws CancellationException if task producing this value was 
+     * @throws CancellationException if task producing this value was
      * cancelled before completion
      * @throws ExecutionException if the underlying computation threw
      * an exception.

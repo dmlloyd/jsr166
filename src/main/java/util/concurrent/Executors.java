@@ -189,7 +189,7 @@ public class Executors {
      */
     public static void invoke(Executor executor, Runnable task)
             throws ExecutionException, InterruptedException {
-        FutureTask<Boolean> ftask = new FutureTask(task, Boolean.TRUE);
+        FutureTask<Boolean> ftask = new FutureTask<Boolean>(task, Boolean.TRUE);
         executor.execute(ftask);
         ftask.get();
     }
