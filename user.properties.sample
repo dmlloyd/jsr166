@@ -11,9 +11,5 @@
 build.warnunchecked = false
 
 
-# ----- Skip java.lang.Thread* classes? (default false) -----
-build.nothreads = false
-
-
 # ----- Restrict to test cases matching this pattern (omit trailing "Test") -----
 #testcase = PriorityQueue
