@@ -7,24 +7,12 @@
 # ---------------------------------------------------------------------------
 
 
-# ----- Which gj compiler: 2.0 or 2.2? (default 2.2) -----
-gjc.version = 2.2
-
-
-# ----- Turn on -novariance? (default true, ignored in version 2.2) -----
-gjc.novariance = true
-
-
 # ----- Turn on -warnunchecked? (default false) -----
-gjc.warnunchecked = false
+build.warnunchecked = false
 
 
 # ----- Skip java.lang.Thread* classes? (default false) -----
 build.nothreads = false
-
-
-# ----- Use emulation classes? (default true for Windows, false otherwise) -----
-#build.emulation = true
 
 
 # ----- Restrict to test cases matching this pattern (omit trailing "Test") -----
