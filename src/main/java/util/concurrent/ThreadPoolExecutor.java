@@ -256,7 +256,7 @@ public class ThreadPoolExecutor implements ExecutorService {
      * task, only if less than corePoolSize threads are running.
      * @return true if successful.
      */
-    private boolean addIfUnderCorePoolSize(Runnable task) {
+    boolean addIfUnderCorePoolSize(Runnable task) {
         Thread t = null;
         mainLock.lock();
         try {
