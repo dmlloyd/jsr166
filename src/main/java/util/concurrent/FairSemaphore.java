@@ -281,7 +281,9 @@ public class FairSemaphore extends Semaphore {
      */
     public void release(long permits) {
         if (permits < 0) throw new IllegalArgumentException();
-        lock.lock();
+        // Even if using fair locks, releases should try to barge in.
+        if (!lock.tryLock())
+            lock.lock();
         try {
             count += permits;
             for (int i = 0; i < permits; ++i)
