@@ -160,7 +160,7 @@ public interface BlockingQueue<E> extends Queue<E> {
      * space to become available.
      * @param o the element to add
      * @throws InterruptedException if interrupted while waiting.
-     * @throws NullPointerException if <tt>o</tt> is <tt>null</tt>.
+     * @throws NullPointerException if the specified element is <tt>null</tt>.
      */
     void put(E o) throws InterruptedException;
 
