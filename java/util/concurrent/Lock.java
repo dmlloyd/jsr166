@@ -52,6 +52,8 @@ package java.util.concurrent;
  * @spec JSR-166
  * @revised $Date$
  * @editor $Author$
+ *
+ * @fixme We need to say something about l.lock() versus synchronized(l)
  **/
 public interface Lock {
 
