@@ -116,7 +116,7 @@ public interface BlockingQueue<E> extends Queue<E> {
     public boolean offer(E o);
 
     /**
-     * Add the specified element to this queue, waiting if necessary up to the
+     * Adds the specified element to this queue, waiting if necessary up to the
      * specified wait time for space to become available.
      * @param o the element to add
      * @param timeout how long to wait before giving up, in units of
@@ -132,7 +132,7 @@ public interface BlockingQueue<E> extends Queue<E> {
         throws InterruptedException;
 
     /**
-     * Retrieve and remove the head of this queue, waiting
+     * Retrieves and removes the head of this queue, waiting
      * if necessary up to the specified wait time if no elements are
      * present on this queue.
      * @param timeout how long to wait before giving up, in units of
@@ -147,7 +147,7 @@ public interface BlockingQueue<E> extends Queue<E> {
         throws InterruptedException;
 
     /**
-     * Retrieve and remove the head of this queue, waiting
+     * Retrieves and removes the head of this queue, waiting
      * if no elements are present on this queue.
      * @return the head of this queue
      * @throws InterruptedException if interrupted while waiting.
@@ -156,7 +156,7 @@ public interface BlockingQueue<E> extends Queue<E> {
 
 
     /**
-     * Add the specified element to this queue, waiting if necessary for
+     * Adds the specified element to this queue, waiting if necessary for
      * space to become available.
      * @param o the element to add
      * @throws InterruptedException if interrupted while waiting.
@@ -166,7 +166,7 @@ public interface BlockingQueue<E> extends Queue<E> {
 
 
     /**
-     * Return the number of elements that this queue can ideally (in
+     * Returns the number of elements that this queue can ideally (in
      * the absence of memory or resource constraints) accept without
      * blocking, or <tt>Integer.MAX_VALUE</tt> if there is no
      * intrinsic limit.
