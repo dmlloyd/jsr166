@@ -13,3 +13,7 @@
 
 # ----- Show build warnings (-warnunchecked) -----
 #build.warnings = true
+
+
+# ----- Use non-native emulation classes -----
+#build.emulation = true
